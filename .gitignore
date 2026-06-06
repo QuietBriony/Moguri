@@ -1,0 +1,21 @@
+# Local audio/source material
+source/audio/*
+!source/audio/.gitkeep
+
+# Private machine transcripts
+docs/transcript.md
+data/audio-transcript-private.json
+
+# Generated temporary media
+*.analysis.wav
+*.tmp.wav
+
+# Python/cache/build noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/

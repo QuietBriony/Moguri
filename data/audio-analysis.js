@@ -1,0 +1,233 @@
+window.MOGURI_AUDIO_ANALYSIS = {
+  "generated_at": "2026-06-06T12:10:54.598340+00:00",
+  "source_audio": {
+    "local_path": "source/audio/2.m4a",
+    "public_dropbox_url": "https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0",
+    "size_bytes": 11618005,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec_name": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bit_rate": 129222,
+    "creation_time": "2026-06-06T11:56:31.000000Z"
+  },
+  "signal": {
+    "analysis_sample_rate": 16000,
+    "duration_seconds": 719.209,
+    "duration_label": "11:59",
+    "peak_dbfs": -0.12,
+    "rms_dbfs": -21.99,
+    "clip_like_samples": 3,
+    "activity_threshold_dbfs": -18.82,
+    "active_seconds": 80.5,
+    "active_ratio": 0.112,
+    "activity_block_count": 24,
+    "mean_spectral_centroid_hz": 2088.6,
+    "p10_frame_dbfs": -30.13,
+    "p50_frame_dbfs": -23.64,
+    "p90_frame_dbfs": -18.43
+  },
+  "loudness": {
+    "input_i": "-17.61",
+    "input_tp": "2.05",
+    "input_lra": "6.80",
+    "input_thresh": "-27.92",
+    "output_i": "-16.20",
+    "output_tp": "-1.50",
+    "output_lra": "6.10",
+    "output_thresh": "-26.46",
+    "normalization_type": "dynamic",
+    "target_offset": "0.20"
+  },
+  "activity_blocks": [
+    {
+      "start": 76.5,
+      "end": 79.0,
+      "start_label": "01:16",
+      "end_label": "01:19",
+      "duration": 2.5
+    },
+    {
+      "start": 113.0,
+      "end": 115.5,
+      "start_label": "01:53",
+      "end_label": "01:56",
+      "duration": 2.5
+    },
+    {
+      "start": 157.5,
+      "end": 162.0,
+      "start_label": "02:38",
+      "end_label": "02:42",
+      "duration": 4.5
+    },
+    {
+      "start": 176.5,
+      "end": 178.5,
+      "start_label": "02:56",
+      "end_label": "02:58",
+      "duration": 2.0
+    },
+    {
+      "start": 241.5,
+      "end": 245.0,
+      "start_label": "04:02",
+      "end_label": "04:05",
+      "duration": 3.5
+    },
+    {
+      "start": 281.5,
+      "end": 285.0,
+      "start_label": "04:42",
+      "end_label": "04:45",
+      "duration": 3.5
+    },
+    {
+      "start": 316.0,
+      "end": 319.0,
+      "start_label": "05:16",
+      "end_label": "05:19",
+      "duration": 3.0
+    },
+    {
+      "start": 331.5,
+      "end": 338.0,
+      "start_label": "05:32",
+      "end_label": "05:38",
+      "duration": 6.5
+    },
+    {
+      "start": 393.0,
+      "end": 397.0,
+      "start_label": "06:33",
+      "end_label": "06:37",
+      "duration": 4.0
+    },
+    {
+      "start": 404.0,
+      "end": 406.0,
+      "start_label": "06:44",
+      "end_label": "06:46",
+      "duration": 2.0
+    },
+    {
+      "start": 416.5,
+      "end": 420.5,
+      "start_label": "06:56",
+      "end_label": "07:00",
+      "duration": 4.0
+    },
+    {
+      "start": 458.0,
+      "end": 461.0,
+      "start_label": "07:38",
+      "end_label": "07:41",
+      "duration": 3.0
+    },
+    {
+      "start": 469.0,
+      "end": 471.5,
+      "start_label": "07:49",
+      "end_label": "07:52",
+      "duration": 2.5
+    },
+    {
+      "start": 510.0,
+      "end": 514.0,
+      "start_label": "08:30",
+      "end_label": "08:34",
+      "duration": 4.0
+    },
+    {
+      "start": 533.0,
+      "end": 535.0,
+      "start_label": "08:53",
+      "end_label": "08:55",
+      "duration": 2.0
+    },
+    {
+      "start": 546.5,
+      "end": 550.5,
+      "start_label": "09:06",
+      "end_label": "09:10",
+      "duration": 4.0
+    },
+    {
+      "start": 559.0,
+      "end": 563.0,
+      "start_label": "09:19",
+      "end_label": "09:23",
+      "duration": 4.0
+    },
+    {
+      "start": 577.5,
+      "end": 580.0,
+      "start_label": "09:38",
+      "end_label": "09:40",
+      "duration": 2.5
+    },
+    {
+      "start": 587.5,
+      "end": 589.5,
+      "start_label": "09:48",
+      "end_label": "09:50",
+      "duration": 2.0
+    },
+    {
+      "start": 628.5,
+      "end": 631.5,
+      "start_label": "10:28",
+      "end_label": "10:32",
+      "duration": 3.0
+    },
+    {
+      "start": 648.5,
+      "end": 655.0,
+      "start_label": "10:48",
+      "end_label": "10:55",
+      "duration": 6.5
+    },
+    {
+      "start": 674.0,
+      "end": 677.0,
+      "start_label": "11:14",
+      "end_label": "11:17",
+      "duration": 3.0
+    },
+    {
+      "start": 689.0,
+      "end": 691.0,
+      "start_label": "11:29",
+      "end_label": "11:31",
+      "duration": 2.0
+    },
+    {
+      "start": 693.0,
+      "end": 697.0,
+      "start_label": "11:33",
+      "end_label": "11:37",
+      "duration": 4.0
+    }
+  ],
+  "transcription": {
+    "available": true,
+    "model": "small",
+    "language": "ja",
+    "language_probability": 1.0,
+    "duration": 719.209,
+    "segment_count": 495,
+    "error": null,
+    "public_text_policy": "Full machine transcript is kept local-only until the member group approves publication."
+  },
+  "transcript_summary": {
+    "character_count": 4501,
+    "keyword_hits": [
+      "体育館",
+      "西原",
+      "バスケ",
+      "メンバー",
+      "もぐり"
+    ],
+    "review_note": "Whisper transcription is machine-generated; member review is still required before publishing as final notes."
+  }
+};
