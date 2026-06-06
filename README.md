@@ -8,6 +8,10 @@ Moguri is a working notebook and static member site for shaping an idea from:
 
 The public site is designed for GitHub Pages. Raw audio is kept local and ignored by Git.
 
+Live site: <https://quietbriony.github.io/Moguri/>
+
+GitHub repo: <https://github.com/QuietBriony/Moguri>
+
 ## Local Workflow
 
 ```powershell
@@ -19,4 +23,4 @@ Then open `http://localhost:8080`.
 
 ## Publish Workflow
 
-Publishing is intentionally human-gated. After confirming the target GitHub owner, visibility, and whether the original audio should stay off-repo, create the remote repository and enable GitHub Pages.
+Publishing was completed to a public GitHub Pages site on 2026-06-06. Future pushes to `main` run `.github/workflows/pages.yml`.

@@ -44,7 +44,8 @@
           <ul class="status-list">
             <li><span class="dot ready"></span>ローカル repo 初期化済み</li>
             <li><span class="dot ready"></span>音源メトリクス生成済み</li>
-            <li><span class="dot wait"></span>GitHub 作成/Pages 公開は確認待ち</li>
+            <li><span class="dot ready"></span>GitHub public repo 作成済み</li>
+            <li><span class="dot ready"></span>GitHub Pages 公開済み</li>
             <li><span class="dot hold"></span>全文 transcript はローカルのみ</li>
           </ul>
           <a class="source-link" href="https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0">Dropbox 音源</a>
@@ -123,17 +124,18 @@
             <h2>GitHub Pages</h2>
           </div>
           <p>
-            この repo は Pages 用の静的ファイルと workflow を含む。公開操作は
-            GitHub owner、repo visibility、音源リンクの扱いを確認してから実行する。
+            この repo は public GitHub Pages として公開済み。元音源と全文 transcript は
+            Git 管理から外し、メンバー向けサイトには要約だけを載せている。
           </p>
-          <code class="command">gh repo create Moguri --public --source . --remote origin</code>
+          <a class="source-link" href="https://quietbriony.github.io/Moguri/">公開サイト</a>
+          <a class="source-link" href="https://github.com/QuietBriony/Moguri">GitHub repo</a>
         </aside>
       </section>
     </main>
 
     <footer>
       <span>Moguri local repo</span>
-      <span>Generated from member audio and public venue reference.</span>
+      <span>Live at quietbriony.github.io/Moguri/</span>
     </footer>
 
     <script src="data/audio-analysis.js"></script>
