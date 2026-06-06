@@ -63,6 +63,41 @@ const memoItems = [
   },
 ];
 
+const eventCandidates = [
+  {
+    label: "測る",
+    title: "反復横跳び",
+    text: "短時間でできて、年齢差も出やすい。床の滑りと靴だけ確認する。",
+  },
+  {
+    label: "伸ばす",
+    title: "長座体前屈",
+    text: "安全寄り。道具が必要なら代替方法を体育館に確認する。",
+  },
+  {
+    label: "跳ぶ",
+    title: "立ち幅跳び",
+    text: "盛り上がりやすいが、着地で無理しないルールを先に決める。",
+  },
+  {
+    label: "投げる",
+    title: "軽いボール投げ",
+    text: "重すぎる物は使わない。周囲の安全距離を取れる場合だけ実施。",
+  },
+  {
+    label: "ゆる枠",
+    title: "謎競技を1つ",
+    text: "笑える枠。ケガしない、壊さない、説明が短いものに限定する。",
+  },
+];
+
+const venueQuestions = [
+  "10名前後で体力測定と軽い競技をする場合、どの利用区分になるか",
+  "全面ではなく一面利用で足りるか、使える範囲はどこまでか",
+  "道具の持ち込み、ボール投げ、計測系の種目が可能か",
+  "予約開始日、仮押さえ可否、本申請と支払いの締切",
+];
+
 const fees = [
   ["アリーナ全面", "町内 2,800円 / 町外 5,600円"],
   ["バドミントン", "町内 500円 / 町外 1,000円"],
@@ -149,6 +184,33 @@ function renderMemoGrid() {
     .join("");
 }
 
+function renderEventGrid() {
+  const target = document.getElementById("eventGrid");
+  if (!target) return;
+  target.innerHTML = eventCandidates
+    .map(
+      (item) => `
+        <article class="event-card">
+          <span>${item.label}</span>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderVenueQuestions() {
+  const target = document.getElementById("venueQuestions");
+  if (!target) return;
+  target.innerHTML = `
+    <h3>電話で聞くこと</h3>
+    <ul>
+      ${venueQuestions.map((item) => `<li>${item}</li>`).join("")}
+    </ul>
+  `;
+}
+
 function renderFeeTable() {
   const target = document.getElementById("feeTable");
   if (!target) return;
@@ -185,5 +247,7 @@ function renderTasks() {
 renderRunList();
 renderDecisionGrid();
 renderMemoGrid();
+renderEventGrid();
+renderVenueQuestions();
 renderFeeTable();
 renderTasks();
