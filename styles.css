@@ -254,6 +254,7 @@ p {
 }
 
 .metric-strip,
+.quick-grid,
 .decision-grid,
 .audio-metrics,
 .task-list {
@@ -266,6 +267,7 @@ p {
 }
 
 .metric-card,
+.quick-card,
 .decision-card,
 .run-card,
 .timeline-item,
@@ -282,6 +284,7 @@ p {
 }
 
 .metric-card span,
+.quick-card span,
 .audio-metric span,
 .decision-card span,
 .task-number {
@@ -302,6 +305,27 @@ p {
 .section {
   padding: 34px 0;
   border-top: 1px solid var(--line);
+}
+
+.quick-read {
+  padding-top: 28px;
+}
+
+.quick-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.quick-card {
+  min-height: 145px;
+  padding: 18px;
+}
+
+.quick-card p {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.45;
 }
 
 .section.split {
@@ -495,6 +519,7 @@ footer a {
   }
 
   .metric-strip,
+  .quick-grid,
   .decision-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -539,6 +564,7 @@ footer a {
   }
 
   .metric-strip,
+  .quick-grid,
   .decision-grid,
   .audio-metrics,
   .task-list {
