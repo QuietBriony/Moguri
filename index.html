@@ -3,92 +3,126 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Moguri | Member Planning Board</title>
+    <meta
+      name="description"
+      content="Moguri Cup の企画共有サイト。音源分析、西原町民体育館の会場メモ、当日の流れ、次アクションをまとめています。"
+    />
+    <meta property="og:title" content="Moguri | Planning Board" />
+    <meta property="og:description" content="Moguri 100回記念会の企画共有ページ。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quietbriony.github.io/Moguri/" />
+    <title>Moguri | Planning Board</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="app-header">
-      <div>
-        <p class="eyebrow">member planning board</p>
-        <h1>Moguri</h1>
-        <p class="lead">100回記念会を、体力測定・パークゴルフ・打ち上げまで含む小さな体育祭として組み立てる。</p>
-      </div>
-      <nav class="tabs" aria-label="Section navigation">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Moguri home">
+        <span class="brand-mark">M</span>
+        <span>Moguri</span>
+      </a>
+      <nav class="nav" aria-label="Section navigation">
         <a href="#brief">概要</a>
+        <a href="#schedule">流れ</a>
         <a href="#audio">音源</a>
         <a href="#venue">会場</a>
         <a href="#tasks">次</a>
       </nav>
     </header>
 
-    <main>
-      <section id="brief" class="section-grid">
-        <article class="panel span-7">
-          <div class="section-heading">
-            <p class="eyebrow">draft concept</p>
-            <h2>Moguri Cup / 40歳の折り返し線</h2>
-          </div>
-          <p>
-            音源からの主案は、2026年11月または12月に西原町民体育館を起点にした
-            内輪向けの健康・競技イベント。前半は体力測定、後半はパークゴルフ、
-            夕方以降はBBQ/カラオケへ移動する流れ。
+    <main id="top">
+      <section class="hero" id="brief">
+        <div class="hero-copy">
+          <p class="eyebrow">Moguri Cup draft</p>
+          <h1>40歳の折り返し線を、笑える体力測定にする。</h1>
+          <p class="lead">
+            100回記念会のたたき台。西原町民体育館を起点に、体力測定、パークゴルフ、
+            BBQ/カラオケまでを小さな体育祭として組む。
           </p>
-          <div class="run-list" id="runList"></div>
-        </article>
-
-        <aside class="panel span-5 status-panel">
-          <div class="section-heading">
-            <p class="eyebrow">current posture</p>
-            <h2>公開前ステータス</h2>
+          <div class="hero-actions" aria-label="Primary links">
+            <a class="button primary" href="https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0">音源を開く</a>
+            <a class="button" href="https://github.com/QuietBriony/Moguri">GitHub repo</a>
           </div>
+        </div>
+
+        <aside class="hero-status" aria-label="Current status">
+          <p class="status-label">公開状態</p>
           <ul class="status-list">
-            <li><span class="dot ready"></span>ローカル repo 初期化済み</li>
-            <li><span class="dot ready"></span>音源メトリクス生成済み</li>
-            <li><span class="dot ready"></span>GitHub public repo 作成済み</li>
             <li><span class="dot ready"></span>GitHub Pages 公開済み</li>
+            <li><span class="dot ready"></span>音源メトリクス生成済み</li>
             <li><span class="dot hold"></span>全文 transcript はローカルのみ</li>
           </ul>
-          <a class="source-link" href="https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0">Dropbox 音源</a>
+          <div class="share-url">quietbriony.github.io/Moguri/</div>
         </aside>
       </section>
 
-      <section id="audio" class="section-grid">
-        <article class="panel span-12 waveform-panel">
-          <div class="section-heading">
-            <p class="eyebrow">audio analysis</p>
-            <h2>音源の読み取り</h2>
-          </div>
-          <img src="assets/waveform.svg" alt="Moguri audio waveform" />
-          <div class="metric-grid" id="metricGrid"></div>
-        </article>
+      <section class="metric-strip" aria-label="Project summary">
+        <div class="metric-card">
+          <span>開催候補</span>
+          <strong>2026年11月 / 12月</strong>
+        </div>
+        <div class="metric-card">
+          <span>参加規模</span>
+          <strong>8-12人 + 見学枠</strong>
+        </div>
+        <div class="metric-card">
+          <span>会場候補</span>
+          <strong>西原町民体育館</strong>
+        </div>
+        <div class="metric-card">
+          <span>最重要リスク</span>
+          <strong>ケガ防止</strong>
+        </div>
+      </section>
 
-        <article class="panel span-7">
-          <div class="section-heading">
-            <p class="eyebrow">timestamped notes</p>
-            <h2>会話から拾った論点</h2>
-          </div>
-          <div class="timeline" id="audioTimeline"></div>
-        </article>
-
-        <aside class="panel span-5">
-          <div class="section-heading">
-            <p class="eyebrow">privacy guardrail</p>
-            <h2>公開範囲</h2>
-          </div>
+      <section class="section split" id="schedule">
+        <div class="section-intro">
+          <p class="eyebrow">run of show</p>
+          <h2>当日の流れ</h2>
           <p>
-            機械文字起こしは生成済み。ただし、名前・冗談・未確定案が混ざるため、
-            サイトには要約だけを載せ、全文はレビュー後に公開判断する。
+            音源上の案を、メンバーに共有しやすい時間割に整理。時間は仮置きなので、
+            予約枠と移動距離が見えたら詰める。
           </p>
-          <div class="keyword-row" id="keywordRow"></div>
-        </aside>
+        </div>
+        <div class="run-list" id="runList"></div>
       </section>
 
-      <section id="venue" class="section-grid">
-        <article class="panel span-6">
-          <div class="section-heading">
-            <p class="eyebrow">venue reference</p>
-            <h2>西原町民体育館</h2>
-          </div>
+      <section class="section">
+        <div class="section-intro wide">
+          <p class="eyebrow">decision frame</p>
+          <h2>この企画の芯</h2>
+          <p>
+            ガチすぎない。でも、ちゃんと測る。初回の数値を残しておけば、次回以降は
+            「前回の自分を超える」遊びにできる。
+          </p>
+        </div>
+        <div class="decision-grid" id="decisionGrid"></div>
+      </section>
+
+      <section class="section audio-section" id="audio">
+        <div class="section-intro wide">
+          <p class="eyebrow">audio analysis</p>
+          <h2>音源から拾ったこと</h2>
+          <p>
+            12分弱の会話から、公開してよい粒度に要約。全文 transcript は名前や冗談が
+            混ざるため、レビューまでは公開しない。
+          </p>
+        </div>
+        <img class="waveform" src="assets/waveform.svg" alt="Moguri audio waveform" />
+        <div class="audio-metrics" id="metricGrid"></div>
+        <div class="timeline" id="audioTimeline"></div>
+      </section>
+
+      <section class="section split" id="venue">
+        <div class="section-intro">
+          <p class="eyebrow">venue reference</p>
+          <h2>西原町民体育館</h2>
+          <p>
+            公式ページ上の情報を、予約前に見るべき項目に圧縮。空き状況と用途区分は
+            電話確認が必要。
+          </p>
+          <a class="button" href="https://www.town.nishihara.okinawa.jp/soshiki/17/1306.html">公式ページ</a>
+        </div>
+        <div class="venue-grid">
           <dl class="facts">
             <div><dt>所在地</dt><dd>西原町字翁長956番地</dd></div>
             <div><dt>運営時間</dt><dd>8:30-21:30</dd></div>
@@ -96,46 +130,26 @@
             <div><dt>予約</dt><dd>使用月の前月1日から受付</dd></div>
             <div><dt>本申請</dt><dd>使用10日前までに窓口提出</dd></div>
           </dl>
-          <a class="source-link" href="https://www.town.nishihara.okinawa.jp/soshiki/17/1306.html">西原町 公式ページ</a>
-        </article>
-
-        <article class="panel span-6">
-          <div class="section-heading">
-            <p class="eyebrow">fee check</p>
-            <h2>料金の初期見立て</h2>
-          </div>
           <div class="fee-table" id="feeTable"></div>
-          <p class="note">興業・大会扱いやアマチュアスポーツ以外の扱いは料金が変わる可能性があるため、電話確認が先。</p>
-        </article>
+        </div>
       </section>
 
-      <section id="tasks" class="section-grid">
-        <article class="panel span-8">
-          <div class="section-heading">
-            <p class="eyebrow">next actions</p>
-            <h2>次に決めること</h2>
-          </div>
-          <div class="task-list" id="taskList"></div>
-        </article>
-
-        <aside class="panel span-4">
-          <div class="section-heading">
-            <p class="eyebrow">publish</p>
-            <h2>GitHub Pages</h2>
-          </div>
+      <section class="section tasks-section" id="tasks">
+        <div class="section-intro wide">
+          <p class="eyebrow">next actions</p>
+          <h2>次に決めること</h2>
           <p>
-            この repo は public GitHub Pages として公開済み。元音源と全文 transcript は
-            Git 管理から外し、メンバー向けサイトには要約だけを載せている。
+            今は「会場が本当に取れるか」と「安全にできる種目」の確認が先。決まったら
+            このページを更新して、URLだけ共有すれば足りる状態にする。
           </p>
-          <a class="source-link" href="https://quietbriony.github.io/Moguri/">公開サイト</a>
-          <a class="source-link" href="https://github.com/QuietBriony/Moguri">GitHub repo</a>
-        </aside>
+        </div>
+        <div class="task-list" id="taskList"></div>
       </section>
     </main>
 
     <footer>
-      <span>Moguri local repo</span>
-      <span>Live at quietbriony.github.io/Moguri/</span>
+      <span>Moguri planning board</span>
+      <a href="https://quietbriony.github.io/Moguri/">公開 URL</a>
     </footer>
 
     <script src="data/audio-analysis.js"></script>
