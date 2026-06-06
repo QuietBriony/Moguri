@@ -200,8 +200,8 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 253, 250, 0.28), rgba(255, 253, 250, 0.98)),
-    url("assets/waveform.svg") center 30% / cover no-repeat;
+    linear-gradient(135deg, rgba(232, 240, 246, 0.9), rgba(255, 253, 250, 0.96)),
+    linear-gradient(45deg, transparent 0 47%, rgba(35, 95, 142, 0.12) 47% 53%, transparent 53% 100%);
   box-shadow: var(--shadow);
 }
 
@@ -238,6 +238,10 @@ p {
   background: var(--green);
 }
 
+.wait {
+  background: var(--amber);
+}
+
 .hold {
   background: var(--coral);
 }
@@ -256,7 +260,7 @@ p {
 .metric-strip,
 .quick-grid,
 .decision-grid,
-.audio-metrics,
+.memo-grid,
 .task-list {
   display: grid;
   gap: 14px;
@@ -270,7 +274,7 @@ p {
 .quick-card,
 .decision-card,
 .run-card,
-.timeline-item,
+.memo-card,
 .task-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -285,7 +289,6 @@ p {
 
 .metric-card span,
 .quick-card span,
-.audio-metric span,
 .decision-card span,
 .task-number {
   display: block;
@@ -355,14 +358,12 @@ p {
   padding: 17px;
 }
 
-.run-card time,
-.timeline-item time {
+.run-card time {
   color: var(--blue);
   font-weight: 900;
 }
 
 .run-card p,
-.timeline-item p,
 .decision-card p,
 .task-card p {
   margin-bottom: 0;
@@ -380,51 +381,6 @@ p {
 .decision-card h3 {
   margin-top: 18px;
   font-size: 1.24rem;
-}
-
-.audio-section {
-  display: grid;
-  gap: 18px;
-}
-
-.waveform {
-  display: block;
-  width: 100%;
-  max-height: 290px;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-}
-
-.audio-metrics {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.audio-metric {
-  padding: 13px 0;
-  border-bottom: 2px solid var(--line);
-}
-
-.audio-metric strong {
-  display: block;
-  margin-top: 3px;
-  color: var(--ink);
-  font-size: 1rem;
-  overflow-wrap: anywhere;
-}
-
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 102px minmax(0, 1fr);
-  gap: 14px;
-  padding: 15px;
 }
 
 .venue-grid {
@@ -490,6 +446,40 @@ dd {
   color: var(--blue);
 }
 
+.notes-section {
+  padding-bottom: 20px;
+}
+
+.memo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.memo-card {
+  min-height: 150px;
+  padding: 18px;
+}
+
+.memo-card p {
+  margin-bottom: 0;
+}
+
+.reference-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.reference-row a {
+  color: var(--blue);
+  font-weight: 850;
+  text-decoration: none;
+}
+
 footer {
   justify-content: space-between;
   gap: 12px;
@@ -524,13 +514,12 @@ footer a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .audio-metrics,
+  .memo-grid,
   .task-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .venue-grid,
-  .timeline {
+  .venue-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -566,13 +555,12 @@ footer a {
   .metric-strip,
   .quick-grid,
   .decision-grid,
-  .audio-metrics,
+  .memo-grid,
   .task-list {
     grid-template-columns: 1fr;
   }
 
   .run-card,
-  .timeline-item,
   .facts div,
   .fee-row {
     grid-template-columns: 1fr;

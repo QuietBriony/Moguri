@@ -1,5 +1,3 @@
-const analysis = window.MOGURI_AUDIO_ANALYSIS || {};
-
 const runOfShow = [
   {
     time: "13:30",
@@ -8,7 +6,7 @@ const runOfShow = [
   },
   {
     time: "13:45",
-    title: "体力測定をする",
+    title: "体力測定",
     text: "安全にできる種目を4-5個に絞る。記録は残して、次回の基準にする。",
   },
   {
@@ -46,15 +44,23 @@ const decisions = [
   },
 ];
 
-const audioNotes = [
-  ["00:00-02:19", "11月開催案が出る。体育館で体力測定、その後パークゴルフ、最後に打ち上げという流れ。"],
-  ["02:19-03:23", "種目、点数、賞品の話。総合順位だけでなく、種目ごとの勝ちも拾うと楽しそう。"],
-  ["03:23-03:50", "40歳の折り返しとして、今の健康や体力を測る意味づけが出る。"],
-  ["03:54-05:30", "候補種目は、反復横跳び、長座体前屈、腹筋、立ち幅跳び、ボール投げなど。"],
-  ["07:17-08:00", "開催は11月か12月。県外組を呼ぶか、まず内輪でやるかを相談。"],
-  ["08:30-09:01", "体育館の借り方と費用感を確認。一面利用でも足りるかもしれない。"],
-  ["10:18-11:24", "小規模な体育祭として見えてくる。初回の記録を、次回以降の比較に使える。"],
-  ["11:35-12:00", "最後に安全面の話。ケガしそうな種目は避ける方針。"],
+const memoItems = [
+  {
+    title: "軸は体力測定",
+    text: "ただの飲み会ではなく、体を動かす理由がある会にする。",
+  },
+  {
+    title: "人数は小さく始める",
+    text: "まずは内輪の8-12人くらいで成立する設計にする。",
+  },
+  {
+    title: "一面利用も検討",
+    text: "全面貸し切りにこだわらず、料金と人数に合う使い方を確認する。",
+  },
+  {
+    title: "安全第一",
+    text: "盛り上がりそうでも、ケガの可能性が高い種目は外す。",
+  },
 ];
 
 const fees = [
@@ -94,10 +100,6 @@ const tasks = [
   },
 ];
 
-function get(path, fallback = "") {
-  return path.reduce((value, key) => (value && value[key] !== undefined ? value[key] : fallback), analysis);
-}
-
 function renderRunList() {
   const target = document.getElementById("runList");
   if (!target) return;
@@ -132,15 +134,15 @@ function renderDecisionGrid() {
     .join("");
 }
 
-function renderTimeline() {
-  const target = document.getElementById("audioTimeline");
+function renderMemoGrid() {
+  const target = document.getElementById("memoGrid");
   if (!target) return;
-  target.innerHTML = audioNotes
+  target.innerHTML = memoItems
     .map(
-      ([time, text]) => `
-        <article class="timeline-item">
-          <time>${time}</time>
-          <p>${text}</p>
+      (item) => `
+        <article class="memo-card">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
         </article>
       `
     )
@@ -180,33 +182,8 @@ function renderTasks() {
     .join("");
 }
 
-function renderMetrics() {
-  const metrics = [
-    ["音源の長さ", get(["signal", "duration_label"], "11:59")],
-    ["文字起こし", `${get(["transcription", "segment_count"], "495")}区切り`],
-    ["音量目安", `${get(["loudness", "input_i"], "-17.61")} LUFS`],
-    ["話している割合", `${Math.round(Number(get(["signal", "active_ratio"], 0.112)) * 100)}%くらい`],
-    ["音源形式", `${get(["source_audio", "codec_name"], "aac")} / ${get(["source_audio", "sample_rate"], "48000")} Hz`],
-    ["よく出た言葉", get(["transcript_summary", "keyword_hits"], ["体育館", "西原", "もぐり"]).join(" / ")],
-  ];
-
-  const target = document.getElementById("metricGrid");
-  if (!target) return;
-  target.innerHTML = metrics
-    .map(
-      ([label, value]) => `
-        <div class="audio-metric">
-          <span>${label}</span>
-          <strong>${value}</strong>
-        </div>
-      `
-    )
-    .join("");
-}
-
 renderRunList();
 renderDecisionGrid();
-renderTimeline();
+renderMemoGrid();
 renderFeeTable();
 renderTasks();
-renderMetrics();
