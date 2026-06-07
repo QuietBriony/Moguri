@@ -261,6 +261,7 @@ p {
 .quick-grid,
 .decision-grid,
 .event-grid,
+.budget-grid,
 .memo-grid,
 .task-list {
   display: grid;
@@ -275,6 +276,7 @@ p {
 .quick-card,
 .decision-card,
 .event-card,
+.budget-card,
 .run-card,
 .memo-card,
 .task-card {
@@ -463,6 +465,35 @@ p {
   color: #3d474f;
 }
 
+.budget-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.budget-card {
+  min-height: 175px;
+  padding: 18px;
+}
+
+.budget-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.budget-card strong {
+  display: block;
+  margin: 8px 0 10px;
+  color: var(--green);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.budget-card p {
+  margin-bottom: 0;
+}
+
 dt,
 .fee-row strong {
   color: var(--ink);
@@ -570,6 +601,7 @@ footer a {
 
   .memo-grid,
   .event-grid,
+  .budget-grid,
   .task-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -611,6 +643,7 @@ footer a {
   .quick-grid,
   .decision-grid,
   .event-grid,
+  .budget-grid,
   .memo-grid,
   .task-list {
     grid-template-columns: 1fr;

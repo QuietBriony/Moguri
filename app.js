@@ -107,6 +107,24 @@ const fees = [
   ["会議室AC", "700円"],
 ];
 
+const budgetScenarios = [
+  {
+    title: "一面だけ借りる",
+    amount: "1,000-2,000円くらい",
+    text: "バドミントン/バスケット枠を2時間使う想定。まずはここで足りるか確認。",
+  },
+  {
+    title: "バレーコート相当",
+    amount: "2,800-5,600円くらい",
+    text: "少し広めに取りたい場合の2時間目安。人数が増えるなら候補。",
+  },
+  {
+    title: "アリーナ全面",
+    amount: "5,600-11,200円くらい",
+    text: "余裕はあるが、10名前後なら広すぎる可能性あり。大会扱いになるか確認。",
+  },
+];
+
 const tasks = [
   {
     label: "1",
@@ -131,7 +149,7 @@ const tasks = [
   {
     label: "5",
     title: "共有する内容を決める",
-    text: "このページは公開済み。音源全文や文字起こしは出さず、必要なら確認済みの抜粋だけ載せる。",
+    text: "このページは公開済み。細かい背景メモは出さず、必要なら確認済みの抜粋だけ載せる。",
   },
 ];
 
@@ -211,6 +229,22 @@ function renderVenueQuestions() {
   `;
 }
 
+function renderBudgetGrid() {
+  const target = document.getElementById("budgetGrid");
+  if (!target) return;
+  target.innerHTML = budgetScenarios
+    .map(
+      (item) => `
+        <article class="budget-card">
+          <span>${item.title}</span>
+          <strong>${item.amount}</strong>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderFeeTable() {
   const target = document.getElementById("feeTable");
   if (!target) return;
@@ -249,5 +283,6 @@ renderDecisionGrid();
 renderMemoGrid();
 renderEventGrid();
 renderVenueQuestions();
+renderBudgetGrid();
 renderFeeTable();
 renderTasks();
