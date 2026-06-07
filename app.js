@@ -230,6 +230,41 @@ const shareMessage = `Moguri 100回記念会のたたき台です。
 ページ:
 https://quietbriony.github.io/Moguri/`;
 
+const referenceSources = [
+  {
+    label: "行政イベント",
+    title: "スポーツフェスティバル in なは",
+    source: "那覇市公式ホームページ",
+    url: "https://www.city.naha.okinawa.jp/kurasitetuduki/sports/1007514/1008419.html",
+    useful: [
+      "スポーツの日に合わせて開催",
+      "体力測定会、教室、施設無料開放を組み合わせている",
+      "複数会場を使い、参加無料で入口を広くしている",
+    ],
+    adapt: "Moguriでは、体力測定を軸にして、最後だけ遊び枠と打ち上げに寄せる。",
+  },
+  {
+    label: "雰囲気確認",
+    title: "スポーツの日に合わせたイベントが開催",
+    source: "YouTube",
+    url: "https://youtu.be/bj9Z_sU8VLM?si=fueLm_izzMdfAqfL",
+    useful: [
+      "会場の雰囲気や導線を見る参考",
+      "大人も参加しやすいスポーツイベントの見せ方を確認",
+      "説明、受付、体験の流れをイメージしやすい",
+    ],
+    adapt: "Moguriでは、受付や説明を短くして、身内向けに軽く再現する。",
+  },
+];
+
+const ideaTemplate = [
+  "タイトル：何の参考か",
+  "リンク：URL",
+  "使える要素：会場、種目、導線、受付、表彰、告知文など",
+  "Moguriで使うなら：そのまま使う / 小さくする / 候補に残す",
+  "次のアクション：誰が確認するか、いつまでに決めるか",
+];
+
 function renderRunList() {
   const target = document.getElementById("runList");
   if (!target) return;
@@ -411,6 +446,39 @@ function renderMessageTemplate() {
   `;
 }
 
+function renderSourceGrid() {
+  const target = document.getElementById("sourceGrid");
+  if (!target) return;
+  target.innerHTML = referenceSources
+    .map(
+      (item) => `
+        <article class="source-card">
+          <span>${item.label}</span>
+          <h3>${item.title}</h3>
+          <p class="source-name">${item.source}</p>
+          <ul>
+            ${item.useful.map((point) => `<li>${point}</li>`).join("")}
+          </ul>
+          <p class="adapt-note">${item.adapt}</p>
+          <a href="${item.url}">参考を見る</a>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderIdeaTemplate() {
+  const target = document.getElementById("ideaTemplate");
+  if (!target) return;
+  target.innerHTML = `
+    <h3>ネタを追加するときの型</h3>
+    <p>リンクだけだと後で使いにくいので、最低限この5点を残す。</p>
+    <ol>
+      ${ideaTemplate.map((item) => `<li>${item}</li>`).join("")}
+    </ol>
+  `;
+}
+
 renderRunList();
 renderRecommendationGrid();
 renderDateGrid();
@@ -423,3 +491,5 @@ renderFeeTable();
 renderTasks();
 renderRsvpGrid();
 renderMessageTemplate();
+renderSourceGrid();
+renderIdeaTemplate();

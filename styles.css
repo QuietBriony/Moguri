@@ -266,6 +266,7 @@ p {
 .budget-grid,
 .memo-grid,
 .rsvp-grid,
+.source-grid,
 .task-list {
   display: grid;
   gap: 14px;
@@ -286,6 +287,8 @@ p {
 .memo-card,
 .rsvp-card,
 .message-card,
+.source-card,
+.idea-template,
 .task-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -635,6 +638,75 @@ dd {
   margin-bottom: 0;
 }
 
+.source-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.source-card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 20px;
+}
+
+.source-card span {
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.source-card h3 {
+  font-size: 1.3rem;
+}
+
+.source-card ul {
+  display: grid;
+  gap: 7px;
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #3d474f;
+}
+
+.source-card a {
+  width: fit-content;
+  color: var(--blue);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.source-name,
+.adapt-note {
+  margin-bottom: 0;
+}
+
+.adapt-note {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.idea-template {
+  margin-top: 14px;
+  padding: 20px;
+}
+
+.idea-template p {
+  margin-bottom: 12px;
+}
+
+.idea-template ol {
+  display: grid;
+  gap: 8px;
+  padding-left: 1.25rem;
+  margin: 0;
+  color: #3d474f;
+}
+
 .message-card {
   margin-top: 14px;
   padding: 18px;
@@ -692,6 +764,7 @@ footer a {
   .event-grid,
   .budget-grid,
   .rsvp-grid,
+  .source-grid,
   .task-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -738,6 +811,7 @@ footer a {
   .budget-grid,
   .memo-grid,
   .rsvp-grid,
+  .source-grid,
   .task-list {
     grid-template-columns: 1fr;
   }
