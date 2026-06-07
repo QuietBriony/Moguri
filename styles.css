@@ -259,10 +259,13 @@ p {
 
 .metric-strip,
 .quick-grid,
+.recommendation-grid,
+.date-grid,
 .decision-grid,
 .event-grid,
 .budget-grid,
 .memo-grid,
+.rsvp-grid,
 .task-list {
   display: grid;
   gap: 14px;
@@ -274,11 +277,15 @@ p {
 
 .metric-card,
 .quick-card,
+.recommendation-card,
+.date-card,
 .decision-card,
 .event-card,
 .budget-card,
 .run-card,
 .memo-card,
+.rsvp-card,
+.message-card,
 .task-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -293,6 +300,8 @@ p {
 
 .metric-card span,
 .quick-card span,
+.recommendation-card span,
+.date-card span,
 .decision-card span,
 .event-card span,
 .task-number {
@@ -334,6 +343,54 @@ p {
   font-size: 1.12rem;
   font-weight: 800;
   line-height: 1.45;
+}
+
+.recommendation-section {
+  padding-top: 28px;
+}
+
+.recommendation-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.recommendation-card {
+  min-height: 220px;
+  padding: 18px;
+}
+
+.recommendation-card span {
+  color: var(--green);
+}
+
+.recommendation-card h3 {
+  margin-top: 18px;
+  font-size: 1.22rem;
+}
+
+.recommendation-card p {
+  margin-bottom: 0;
+}
+
+.date-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.date-card {
+  min-height: 155px;
+  padding: 18px;
+}
+
+.date-card strong {
+  display: block;
+  margin: 8px 0 10px;
+  color: var(--ink);
+  font-size: 1.16rem;
+  line-height: 1.28;
+}
+
+.date-card p {
+  margin-bottom: 0;
 }
 
 .section.split {
@@ -565,6 +622,36 @@ dd {
   text-decoration: none;
 }
 
+.rsvp-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rsvp-card {
+  min-height: 155px;
+  padding: 18px;
+}
+
+.rsvp-card p {
+  margin-bottom: 0;
+}
+
+.message-card {
+  margin-top: 14px;
+  padding: 18px;
+}
+
+.message-card pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #f4efe6;
+  color: var(--ink);
+  font: inherit;
+  white-space: pre-wrap;
+}
+
 footer {
   justify-content: space-between;
   gap: 12px;
@@ -595,6 +682,8 @@ footer a {
 
   .metric-strip,
   .quick-grid,
+  .recommendation-grid,
+  .date-grid,
   .decision-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -602,6 +691,7 @@ footer a {
   .memo-grid,
   .event-grid,
   .budget-grid,
+  .rsvp-grid,
   .task-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -641,10 +731,13 @@ footer a {
 
   .metric-strip,
   .quick-grid,
+  .recommendation-grid,
+  .date-grid,
   .decision-grid,
   .event-grid,
   .budget-grid,
   .memo-grid,
+  .rsvp-grid,
   .task-list {
     grid-template-columns: 1fr;
   }
@@ -661,6 +754,12 @@ footer a {
   }
 
   .event-card {
+    min-height: 0;
+  }
+
+  .recommendation-card,
+  .date-card,
+  .rsvp-card {
     min-height: 0;
   }
 

@@ -44,6 +44,47 @@ const decisions = [
   },
 ];
 
+const recommendations = [
+  {
+    label: "日程",
+    title: "2026年11月14日（土）午後を第一候補",
+    text: "11月開催なら予約開始は2026年10月1日。早めに候補日を1つ決めて、会場確認を進める。",
+  },
+  {
+    label: "会場",
+    title: "体育館はまず一面利用で確認",
+    text: "10名前後なら全面より一面利用のほうが現実的。足りなければ広い枠に上げる。",
+  },
+  {
+    label: "種目",
+    title: "4種目 + ゆる枠1つ",
+    text: "反復横跳び、長座体前屈、立ち幅跳び、軽い投げ種目、最後にネタ種目を1つ。",
+  },
+  {
+    label: "打ち上げ",
+    title: "参加任意で後半に置く",
+    text: "体を動かす会を主役にして、BBQ/カラオケは行ける人で移動する形にする。",
+  },
+];
+
+const dateCandidates = [
+  {
+    date: "2026年11月14日（土）",
+    label: "第一候補",
+    text: "体育館確認と参加確認をまずこの日で進める。",
+  },
+  {
+    date: "2026年11月21日（土）",
+    label: "予備",
+    text: "第一候補が取れない、または参加が薄い場合の予備日。",
+  },
+  {
+    date: "2026年12月5日（土）",
+    label: "年末寄り",
+    text: "11月が難しい場合の切り替え候補。予約開始は2026年11月1日。",
+  },
+];
+
 const memoItems = [
   {
     title: "軸は体力測定",
@@ -153,6 +194,42 @@ const tasks = [
   },
 ];
 
+const rsvpItems = [
+  {
+    title: "候補日",
+    text: "11/14、11/21、12/5 の参加可否を取る。",
+  },
+  {
+    title: "参加形態",
+    text: "競技参加、見学だけ、打ち上げだけを分ける。",
+  },
+  {
+    title: "安全メモ",
+    text: "ケガ、腰、膝、避けたい種目があれば先に出してもらう。",
+  },
+  {
+    title: "打ち上げ",
+    text: "BBQ/カラオケの参加可否と、運転できる人を確認する。",
+  },
+];
+
+const shareMessage = `Moguri 100回記念会のたたき台です。
+まずは小さな体育祭案で進めたいです。
+
+候補日:
+1. 2026年11月14日（土）午後
+2. 2026年11月21日（土）午後
+3. 2026年12月5日（土）午後
+
+返事ほしいもの:
+- 参加できそうな日
+- 競技参加 / 見学 / 打ち上げだけ
+- NG種目やケガ不安
+- 打ち上げ参加可否
+
+ページ:
+https://quietbriony.github.io/Moguri/`;
+
 function renderRunList() {
   const target = document.getElementById("runList");
   if (!target) return;
@@ -165,6 +242,38 @@ function renderRunList() {
             <h3>${item.title}</h3>
             <p>${item.text}</p>
           </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderRecommendationGrid() {
+  const target = document.getElementById("recommendationGrid");
+  if (!target) return;
+  target.innerHTML = recommendations
+    .map(
+      (item) => `
+        <article class="recommendation-card">
+          <span>${item.label}</span>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderDateGrid() {
+  const target = document.getElementById("dateGrid");
+  if (!target) return;
+  target.innerHTML = dateCandidates
+    .map(
+      (item) => `
+        <article class="date-card">
+          <span>${item.label}</span>
+          <strong>${item.date}</strong>
+          <p>${item.text}</p>
         </article>
       `
     )
@@ -278,7 +387,33 @@ function renderTasks() {
     .join("");
 }
 
+function renderRsvpGrid() {
+  const target = document.getElementById("rsvpGrid");
+  if (!target) return;
+  target.innerHTML = rsvpItems
+    .map(
+      (item) => `
+        <article class="rsvp-card">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderMessageTemplate() {
+  const target = document.getElementById("messageTemplate");
+  if (!target) return;
+  target.innerHTML = `
+    <h3>共有するときの文面</h3>
+    <pre>${shareMessage}</pre>
+  `;
+}
+
 renderRunList();
+renderRecommendationGrid();
+renderDateGrid();
 renderDecisionGrid();
 renderMemoGrid();
 renderEventGrid();
@@ -286,3 +421,5 @@ renderVenueQuestions();
 renderBudgetGrid();
 renderFeeTable();
 renderTasks();
+renderRsvpGrid();
+renderMessageTemplate();

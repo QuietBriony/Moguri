@@ -22,9 +22,11 @@
       </a>
       <nav class="nav" aria-label="Section navigation">
         <a href="#brief">概要</a>
+        <a href="#recommendation">推奨案</a>
         <a href="#tasks">決めること</a>
         <a href="#venue">会場</a>
         <a href="#events">種目</a>
+        <a href="#rsvp">参加確認</a>
         <a href="#schedule">流れ</a>
         <a href="#notes">メモ</a>
       </nav>
@@ -75,6 +77,19 @@
           <span>優先事項</span>
           <strong>ケガしない種目にする</strong>
         </div>
+      </section>
+
+      <section class="section recommendation-section" id="recommendation">
+        <div class="section-intro wide">
+          <p class="eyebrow">推奨案</p>
+          <h2>まずはこの案で進める</h2>
+          <p>
+            迷うところを減らすための初期推奨です。全員で決めきる前に、この案で会場確認と
+            参加確認を走らせます。
+          </p>
+        </div>
+        <div class="recommendation-grid" id="recommendationGrid"></div>
+        <div class="date-grid" id="dateGrid"></div>
       </section>
 
       <section class="section quick-read" aria-label="まず読むところ">
@@ -168,6 +183,19 @@
           </p>
         </div>
         <div class="event-grid" id="eventGrid"></div>
+      </section>
+
+      <section class="section rsvp-section" id="rsvp">
+        <div class="section-intro wide">
+          <p class="eyebrow">参加確認</p>
+          <h2>メンバーに聞くこと</h2>
+          <p>
+            参加確認は長くしない。まずは候補日、競技参加、打ち上げ参加、NG種目だけ取れれば
+            会場と当日の流れを詰められます。
+          </p>
+        </div>
+        <div class="rsvp-grid" id="rsvpGrid"></div>
+        <div class="message-card" id="messageTemplate"></div>
       </section>
 
       <section class="section notes-section" id="notes">
