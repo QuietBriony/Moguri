@@ -260,6 +260,8 @@ p {
 .metric-strip,
 .quick-grid,
 .recommendation-grid,
+.blueprint-grid,
+.distill-grid,
 .date-grid,
 .decision-grid,
 .event-grid,
@@ -279,6 +281,8 @@ p {
 .metric-card,
 .quick-card,
 .recommendation-card,
+.blueprint-card,
+.distill-card,
 .date-card,
 .decision-card,
 .event-card,
@@ -304,6 +308,8 @@ p {
 .metric-card span,
 .quick-card span,
 .recommendation-card span,
+.blueprint-card span,
+.distill-card span,
 .date-card span,
 .decision-card span,
 .event-card span,
@@ -372,6 +378,134 @@ p {
 
 .recommendation-card p {
   margin-bottom: 0;
+}
+
+.blueprint-section {
+  display: grid;
+  gap: 18px;
+  margin-inline: calc(clamp(18px, 5vw, 68px) * -1);
+  padding: clamp(30px, 5vw, 58px) clamp(18px, 5vw, 68px);
+  border-top: 0;
+  background:
+    linear-gradient(90deg, rgba(40, 98, 69, 0.18), transparent 36%),
+    #242b27;
+  color: #fffdfa;
+}
+
+.blueprint-head {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(18px, 4vw, 46px);
+  align-items: center;
+  width: 100%;
+  max-width: 1180px;
+}
+
+.blueprint-head .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+  color: #f0c36a;
+}
+
+.blueprint-head h2 {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 540px;
+}
+
+.blueprint-head h2,
+.blueprint-head p {
+  color: #fffdfa;
+}
+
+.blueprint-head p:not(.eyebrow) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  max-width: 680px;
+  margin-bottom: 0;
+  font-size: 1.03rem;
+}
+
+.blueprint-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1180px;
+}
+
+.blueprint-card {
+  min-height: 210px;
+  padding: 18px;
+  border-color: rgba(255, 253, 250, 0.18);
+  background: rgba(255, 253, 250, 0.08);
+  box-shadow: none;
+}
+
+.blueprint-card span {
+  color: #f0c36a;
+}
+
+.blueprint-card h3 {
+  margin-top: 18px;
+  color: #fffdfa;
+  font-size: 1.2rem;
+}
+
+.blueprint-card p {
+  margin-bottom: 0;
+  color: #e7ede7;
+}
+
+.distill-grid {
+  max-width: 1180px;
+  margin-top: 2px;
+}
+
+.distill-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1.15fr;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 116px;
+  padding: 16px;
+  border-color: rgba(255, 253, 250, 0.2);
+  background: rgba(255, 253, 250, 0.95);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.distill-card div {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  padding-left: 14px;
+  border-left: 3px solid var(--line);
+}
+
+.distill-card div:first-child {
+  border-left-color: var(--green);
+}
+
+.distill-card div:nth-child(2) {
+  border-left-color: var(--amber);
+}
+
+.distill-card div:last-child {
+  border-left-color: var(--blue);
+}
+
+.distill-card span {
+  color: var(--muted);
+}
+
+.distill-card strong {
+  color: var(--ink);
+  font-size: 1.04rem;
+  line-height: 1.35;
+}
+
+.distill-card p {
+  margin-bottom: 0;
+  color: #334047;
 }
 
 .date-grid {
@@ -755,9 +889,22 @@ footer a {
   .metric-strip,
   .quick-grid,
   .recommendation-grid,
+  .blueprint-grid,
   .date-grid,
   .decision-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blueprint-head,
+  .distill-card {
+    grid-template-columns: 1fr;
+  }
+
+  .blueprint-head .eyebrow,
+  .blueprint-head h2,
+  .blueprint-head p:not(.eyebrow) {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .memo-grid,
@@ -805,6 +952,7 @@ footer a {
   .metric-strip,
   .quick-grid,
   .recommendation-grid,
+  .blueprint-grid,
   .date-grid,
   .decision-grid,
   .event-grid,
@@ -832,6 +980,7 @@ footer a {
   }
 
   .recommendation-card,
+  .blueprint-card,
   .date-card,
   .rsvp-card {
     min-height: 0;

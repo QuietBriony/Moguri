@@ -85,6 +85,57 @@ const dateCandidates = [
   },
 ];
 
+const blueprintItems = [
+  {
+    label: "イベント名",
+    title: "Moguri 体力測定フェス",
+    text: "100回記念の名前は残しつつ、内容は体力測定を中心にした小さなスポーツフェスにする。",
+  },
+  {
+    label: "基本構成",
+    title: "測る / 遊ぶ / 打ち上げる",
+    text: "体育館で測定、余裕があればパークゴルフ、最後は参加任意の打ち上げ。主役はあくまで前半。",
+  },
+  {
+    label: "参加しやすさ",
+    title: "競技参加・見学・打ち上げだけを分ける",
+    text: "全員が同じ熱量で参加しなくていい設計にする。入口を広くして、無理を減らす。",
+  },
+  {
+    label: "運営",
+    title: "受付と説明を短く、種目は少なく",
+    text: "大きいイベントのように盛らず、4種目+ゆる枠1つに絞って、説明時間を短くする。",
+  },
+];
+
+const distillItems = [
+  {
+    source: "スポーツの日に合わせる",
+    extracted: "健康・運動の理由づけが自然に作れる",
+    moguri: "100回記念と40歳前後の体力記録に置き換える",
+  },
+  {
+    source: "体力測定会",
+    extracted: "測定は参加者に分かりやすく、記録として残る",
+    moguri: "反復横跳び、前屈、立ち幅跳び、軽い投げ種目に絞る",
+  },
+  {
+    source: "各種教室・無料開放",
+    extracted: "参加ハードルを下げる余白がある",
+    moguri: "見学だけ、打ち上げだけ、ゆる競技だけの参加も許容する",
+  },
+  {
+    source: "複数会場運用",
+    extracted: "メインとサブを分けると流れを作りやすい",
+    moguri: "体育館をメイン、パークゴルフと打ち上げを任意の後半に置く",
+  },
+  {
+    source: "問い合わせ先の分け方",
+    extracted: "確認事項を分けると運営が詰まりにくい",
+    moguri: "体育館担当、参加確認担当、打ち上げ担当を分ける",
+  },
+];
+
 const memoItems = [
   {
     title: "軸は体力測定",
@@ -315,6 +366,47 @@ function renderDateGrid() {
     .join("");
 }
 
+function renderBlueprintGrid() {
+  const target = document.getElementById("blueprintGrid");
+  if (!target) return;
+  target.innerHTML = blueprintItems
+    .map(
+      (item) => `
+        <article class="blueprint-card">
+          <span>${item.label}</span>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderDistillGrid() {
+  const target = document.getElementById("distillGrid");
+  if (!target) return;
+  target.innerHTML = distillItems
+    .map(
+      (item) => `
+        <article class="distill-card">
+          <div>
+            <span>参考から拾う</span>
+            <strong>${item.source}</strong>
+          </div>
+          <div>
+            <span>意味</span>
+            <p>${item.extracted}</p>
+          </div>
+          <div>
+            <span>Moguriでは</span>
+            <p>${item.moguri}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderDecisionGrid() {
   const target = document.getElementById("decisionGrid");
   if (!target) return;
@@ -482,6 +574,8 @@ function renderIdeaTemplate() {
 renderRunList();
 renderRecommendationGrid();
 renderDateGrid();
+renderBlueprintGrid();
+renderDistillGrid();
 renderDecisionGrid();
 renderMemoGrid();
 renderEventGrid();
