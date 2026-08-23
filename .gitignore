@@ -6,6 +6,11 @@ source/audio/*
 docs/transcript.md
 data/audio-transcript-private.json
 
+# Private/derived audio analysis (canonical copies live in private Moguri Drive)
+docs/audio-analysis.md
+data/audio-analysis.json
+data/audio-analysis.js
+
 # Generated temporary media
 *.analysis.wav
 *.tmp.wav

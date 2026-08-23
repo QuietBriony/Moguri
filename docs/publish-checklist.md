@@ -11,6 +11,7 @@ Publishing is human-gated for this workspace.
 
 - Confirm the event rows marked `公開` contain only public-safe text.
 - Confirm no internal memo, transcript, audio, or generated analysis appears in `dist/`.
+- Confirm `docs/audio-analysis.md` and `data/audio-analysis.*` remain untracked and stored only in the private Moguri AI folder.
 - Run `npm run check` and `npm run build`.
 - Review the desktop and mobile page locally.
 - Confirm whether the target is GitHub Pages, Cloudflare Pages, or both.

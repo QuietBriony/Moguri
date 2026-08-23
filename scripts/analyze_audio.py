@@ -347,7 +347,6 @@ def main() -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_audio": {
             "local_path": "source/audio/2.m4a",
-            "public_dropbox_url": "https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0",
             "size_bytes": int(fmt.get("size", 0)),
             "format_name": fmt.get("format_name"),
             "codec_name": stream.get("codec_name"),
