@@ -14,6 +14,7 @@ data/audio-transcript-private.json
 __pycache__/
 *.py[cod]
 .pytest_cache/
+dist/
 
 # OS/editor noise
 .DS_Store

@@ -5,249 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Moguri 100回記念会の企画共有ページ。小さな体育祭として開催するための案、決めること、会場確認、当日の流れを整理しています。"
+      content="Moguriのイベント企画ハブ。体育祭、クルーザー釣り、アドベンチャー、植樹をイベントごとに育て、共有シートと連動して更新します。"
     />
-    <meta property="og:title" content="Moguri 100回記念会 企画共有ページ" />
-    <meta property="og:description" content="体力測定と打ち上げを中心にした、Moguri 100回記念会のたたき台。" />
+    <meta property="og:title" content="Moguri イベント企画ハブ" />
+    <meta
+      property="og:description"
+      content="やりたいことを、イベントごとに育てる。公開中の企画と次の一手をみんなで共有するページ。"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://quietbriony.github.io/Moguri/" />
-    <title>Moguri 100回記念会 企画共有ページ</title>
+    <meta name="theme-color" content="#173f35" />
+    <title>Moguri イベント企画ハブ</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Moguri home">
-        <span class="brand-mark">M</span>
-        <span>Moguri 100回記念会</span>
+      <a class="brand" href="#top" aria-label="Moguri イベント企画ハブ トップ">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>Moguri</span>
       </a>
-      <nav class="nav" aria-label="Section navigation">
-        <a href="#brief">概要</a>
-        <a href="#recommendation">推奨案</a>
-        <a href="#blueprint">蒸留案</a>
-        <a href="#tasks">決めること</a>
-        <a href="#venue">会場</a>
-        <a href="#events">種目</a>
-        <a href="#rsvp">参加確認</a>
-        <a href="#references">参考ネタ</a>
-        <a href="#schedule">流れ</a>
-        <a href="#notes">メモ</a>
+      <nav class="nav" aria-label="ページ内ナビゲーション">
+        <a href="#event-hub">イベント</a>
+        <a href="#sports">体力測定会</a>
+        <a href="#planting">植樹</a>
+        <a href="#drive">共同編集</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" id="brief">
+    <main id="main">
+      <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow">たたき台 / みんなで更新するページ</p>
-          <h1>小さな体育祭として、Moguri 100回を祝う。</h1>
+          <p class="eyebrow">Moguri / Event planning hub</p>
+          <h1>やりたいことを、<br />イベントごとに育てる。</h1>
           <p class="lead">
-            西原町民体育館を候補に、軽い体力測定、パークゴルフ、打ち上げまでを
-            ひとつの流れにする案です。まだ決定ではないので、このページを見ながら
-            日程・会場・種目を詰めていきます。
+            体育祭、クルーザー釣り、ターだきのアドベンチャー、植樹。
+            ひとつの日に詰め込まず、それぞれに日付・場所・担当を決めていくための共有ページです。
           </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="#tasks">まず決めること</a>
-            <a class="button" href="#venue">会場候補を見る</a>
+          <div class="hero-actions" aria-label="主要リンク">
+            <a
+              class="button primary"
+              href="https://docs.google.com/spreadsheets/d/16M7nRooOCL64B25zJI8CXBeX6TEbcLz82OIvaIkGTFs/edit#gid=838173949"
+            >イベントを追加・更新</a>
+            <a class="button" href="#event-hub">いまの企画を見る</a>
           </div>
         </div>
 
-        <aside class="hero-status" aria-label="Current status">
-          <p class="status-label">現在の状態</p>
+        <aside class="hero-status" aria-label="公開と連動の状態">
+          <p class="status-kicker">現在の構成</p>
+          <h2>公開はシンプルに、作業はDriveで。</h2>
           <ul class="status-list">
-            <li><span class="dot ready"></span>共有URLは公開済み</li>
-            <li><span class="dot wait"></span>日程は未確定</li>
-            <li><span class="dot wait"></span>体育館は電話確認前</li>
-            <li><span class="dot wait"></span>種目は候補出し中</li>
+            <li><span class="dot ready"></span><span>公開先：GitHub Pages</span></li>
+            <li><span class="dot ready"></span><span>共有シート：公開指定の行を連動</span></li>
+            <li><span class="dot wait"></span><span>Cloudflare Pages：未接続</span></li>
+            <li><span class="dot ready"></span><span>AI・内部資料：公開導線から除外</span></li>
           </ul>
-          <div class="share-url">quietbriony.github.io/Moguri/</div>
+          <a class="text-link" href="https://drive.google.com/drive/folders/1T8rbeEmxREmp3vdy4n1kveQzF0Rn4Ny1">
+            共同編集フォルダを開く →
+          </a>
         </aside>
       </section>
 
-      <section class="metric-strip" aria-label="Project summary">
-        <div class="metric-card">
-          <span>開催時期</span>
-          <strong>2026年11月か12月で検討</strong>
-        </div>
-        <div class="metric-card">
-          <span>人数感</span>
-          <strong>まずは8-12人くらい</strong>
-        </div>
-        <div class="metric-card">
-          <span>会場候補</span>
-          <strong>西原町民体育館</strong>
-        </div>
-        <div class="metric-card">
-          <span>優先事項</span>
-          <strong>ケガしない種目にする</strong>
-        </div>
+      <section class="metric-strip" aria-label="企画の要点">
+        <article class="metric-card"><span>企画中</span><strong>4イベント</strong></article>
+        <article class="metric-card"><span>日程</span><strong>イベント別に調整</strong></article>
+        <article class="metric-card"><span>入力</span><strong>みんなの共有シート</strong></article>
+        <article class="metric-card"><span>公開</span><strong>「公開」指定だけ</strong></article>
       </section>
 
-      <section class="section recommendation-section" id="recommendation">
-        <div class="section-intro wide">
-          <p class="eyebrow">推奨案</p>
-          <h2>まずはこの案で進める</h2>
-          <p>
-            迷うところを減らすための初期推奨です。全員で決めきる前に、この案で会場確認と
-            参加確認を走らせます。
+      <section class="section" id="event-hub" aria-labelledby="event-hub-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Live from Google Sheets</p>
+            <h2 id="event-hub-title">いま動いているイベント</h2>
+          </div>
+          <p class="section-lead">
+            共有シートの「公開区分」が「公開」のイベントだけを表示します。
+            日付が違う企画も、この一覧を入口にそれぞれ育てていきます。
           </p>
         </div>
-        <div class="recommendation-grid" id="recommendationGrid"></div>
-        <div class="date-grid" id="dateGrid"></div>
+        <div class="sync-bar" role="status" aria-live="polite">
+          <span class="pulse" aria-hidden="true"></span>
+          <span id="sheetStatus">Google Sheetsを読み込み中…</span>
+        </div>
+        <div class="live-event-grid" id="liveEventGrid" aria-busy="true"></div>
+        <noscript>
+          <p class="notice">イベント一覧の自動表示にはJavaScriptが必要です。共有シートから直接確認できます。</p>
+        </noscript>
       </section>
 
-      <section class="section blueprint-section" id="blueprint">
-        <div class="blueprint-head">
-          <p class="eyebrow">参考から蒸留した案</p>
-          <h2>Moguri版の最適イベント</h2>
+      <section class="section feature-section" id="sports" aria-labelledby="sports-title">
+        <div class="feature-copy">
+          <p class="eyebrow">EV-001 / 体力測定会</p>
+          <h2 id="sports-title">西原でやろうか枠</h2>
           <p>
-            那覇市の市民スポーツイベントから、規模ではなく「作り方」を拾います。
-            Moguriでは、無料開放や大規模教室をそのまま真似るのではなく、
-            参加しやすい導線、短い体験、複数メニュー、問い合わせ先の分け方だけを小さく使います。
+            Moguriの体育祭的なネタは、体力測定会として独立イベントに残します。
+            前泊から共有される運動計測ネタを受けて、種目と候補日を絞ります。
           </p>
+          <div class="tag-row" aria-label="企画の状態">
+            <span class="tag">11月または12月</span>
+            <span class="tag">日付未確定</span>
+            <span class="tag">情報待ち</span>
+          </div>
         </div>
-        <div class="blueprint-grid" id="blueprintGrid"></div>
-        <div class="distill-grid" id="distillGrid"></div>
+        <div class="feature-panel">
+          <p class="panel-label">会場の優先順</p>
+          <ol class="numbered-list">
+            <li><strong>第1候補</strong><span>所属学校のスペースを一般開放できるか確認</span></li>
+            <li><strong>第2候補</strong><span>西原町民体育館の利用可能日・備品・条件を確認</span></li>
+          </ol>
+          <p class="panel-note">会場と種目が見えてから、候補日を参加者へ確認します。</p>
+        </div>
       </section>
 
-      <section class="section quick-read" aria-label="まず読むところ">
-        <div class="section-intro wide">
-          <p class="eyebrow">まずここだけ読む</p>
-          <h2>このページで分かること</h2>
+      <section class="section planting-section" id="planting" aria-labelledby="planting-title">
+        <div class="planting-intro">
+          <p class="eyebrow">EV-004 / 植樹イベント</p>
+          <h2 id="planting-title">食べる庭と、記念に残る木。</h2>
+          <p>
+            植樹はイベントに入っています。体育祭とは別の日付で、長く育つ木、早く収穫できる植物、
+            シンボルツリーを組み合わせる構想です。
+          </p>
+          <p class="caution">35〜45㎡はたたき台です。場所・許可・日当たり・排水・風を現地と専門家で確認してから確定します。</p>
         </div>
-        <div class="quick-grid">
-          <article class="quick-card">
-            <span>企画</span>
-            <p>Moguriの内輪でやる、体力測定メインの小さな体育祭。</p>
+        <div class="plant-grid">
+          <article class="plant-card featured">
+            <span>長く育てる</span>
+            <h3>シークヮーサー</h3>
+            <p>食べられる木の中心候補。地域の条件に合う品種と本数を確認します。</p>
           </article>
-          <article class="quick-card">
-            <span>目的</span>
-            <p>40歳前後の今の体力を、笑いながら記録として残す。</p>
+          <article class="plant-card">
+            <span>記念樹</span>
+            <h3>ガジュマル</h3>
+            <p>根張りを考え、食べる庭とは別区画でシンボルとして育てる案。</p>
           </article>
-          <article class="quick-card">
-            <span>次に必要</span>
-            <p>日程、体育館の利用可否、種目、安全ルールを決める。</p>
+          <article class="plant-card">
+            <span>早めに収穫</span>
+            <h3>バナナ + パイナップル</h3>
+            <p>成長と収穫を楽しみやすい短期枠。配置と管理のしやすさを確認します。</p>
+          </article>
+          <article class="plant-card">
+            <span>別プロジェクト</span>
+            <h3>バニラ</h3>
+            <p>支柱や棚が必要なため、植樹本体と分けて小さく試す案です。</p>
           </article>
         </div>
       </section>
 
-      <section class="section tasks-section" id="tasks">
-        <div class="section-intro wide">
-          <p class="eyebrow">次のアクション</p>
-          <h2>まず決めること</h2>
-          <p>
-            いま必要なのは、演出よりも会場確認と安全な種目決めです。
-            ここが決まると、当日の流れと予算がかなり見えます。
+      <section class="section drive-section" id="drive" aria-labelledby="drive-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shared workflow</p>
+            <h2 id="drive-title">みんなで触る場所を迷わない</h2>
+          </div>
+          <p class="section-lead">
+            入力、整理・承認、公開の役割を分けました。AI作業用と内部メモは公開ページからリンクしません。
           </p>
         </div>
-        <div class="task-list" id="taskList"></div>
-      </section>
 
-      <section class="section split" id="venue">
-        <div class="section-intro">
-          <p class="eyebrow">会場候補の確認</p>
-          <h2>西原町民体育館を確認する</h2>
-          <p>
-            まだ予約確定ではありません。まずは「体力測定と軽い競技で借りられるか」
-            「一面利用で足りるか」「料金区分がどうなるか」を電話で確認します。
-          </p>
-          <a class="button" href="https://www.town.nishihara.okinawa.jp/soshiki/17/1306.html">西原町の公式ページ</a>
+        <div class="drive-grid">
+          <article class="drive-card primary-card">
+            <span class="step">01 / みんな</span>
+            <h3>イベント入力</h3>
+            <p>新しい企画、候補地、日程メモ、次に決めることを追加します。</p>
+            <a
+              class="button primary"
+              href="https://docs.google.com/spreadsheets/d/16M7nRooOCL64B25zJI8CXBeX6TEbcLz82OIvaIkGTFs/edit#gid=838173949"
+            >入力シートを開く</a>
+          </article>
+          <article class="drive-card">
+            <span class="step">02 / 運営</span>
+            <h3>企画・ページ反映マスター</h3>
+            <p>決定事項、タスク、掲載可否、ページに反映する内容を整理します。</p>
+            <a
+              class="button"
+              href="https://docs.google.com/spreadsheets/d/16fvqZbgGHQTyeABn92KsMDDK8ewJSQHjElSjk7tiBNo/edit#gid=170823001"
+            >運営マスターを開く</a>
+          </article>
+          <article class="drive-card">
+            <span class="step">03 / 全体</span>
+            <h3>共同編集フォルダ</h3>
+            <p>全員編集できる入口です。通常は上の2つのシートを使います。</p>
+            <a class="button" href="https://drive.google.com/drive/folders/1T8rbeEmxREmp3vdy4n1kveQzF0Rn4Ny1">Driveを開く</a>
+          </article>
         </div>
-        <div class="venue-grid">
-          <dl class="facts">
-            <div><dt>所在地</dt><dd>西原町字翁長956番地</dd></div>
-            <div><dt>運営時間</dt><dd>8:30-21:30</dd></div>
-            <div><dt>電話</dt><dd>098-945-8095</dd></div>
-            <div><dt>予約</dt><dd>使用月の前月1日から受付</dd></div>
-            <div><dt>本申請</dt><dd>使用10日前までに窓口提出</dd></div>
-          </dl>
-          <div class="fee-table" id="feeTable"></div>
-        </div>
-        <div class="question-list" id="venueQuestions"></div>
-        <div class="budget-grid" id="budgetGrid"></div>
-      </section>
 
-      <section class="section split" id="schedule">
-        <div class="section-intro">
-          <p class="eyebrow">当日の仮スケジュール</p>
-          <h2>当日の流れ（仮）</h2>
-          <p>
-            時間は仮置きです。会場の予約枠、移動時間、打ち上げ場所が決まったら、
-            ここを確定版にします。
-          </p>
-        </div>
-        <div class="run-list" id="runList"></div>
-      </section>
-
-      <section class="section">
-        <div class="section-intro wide">
-          <p class="eyebrow">企画の方針</p>
-          <h2>こういう会にしたい</h2>
-          <p>
-            ちゃんと測るけど、重くしない。勝ち負けも作るけど、ケガしない。
-            「前回の自分を超える」くらいの温度感で、次回にもつながる形にします。
-          </p>
-        </div>
-        <div class="decision-grid" id="decisionGrid"></div>
-      </section>
-
-      <section class="section events-section" id="events">
-        <div class="section-intro wide">
-          <p class="eyebrow">種目候補</p>
-          <h2>安全にできそうな種目から選ぶ</h2>
-          <p>
-            道具が少なく、説明が短く、ケガの可能性が低いものを優先します。
-            採点は細かくしすぎず、個別賞を拾えるくらいにします。
-          </p>
-        </div>
-        <div class="event-grid" id="eventGrid"></div>
-      </section>
-
-      <section class="section rsvp-section" id="rsvp">
-        <div class="section-intro wide">
-          <p class="eyebrow">参加確認</p>
-          <h2>メンバーに聞くこと</h2>
-          <p>
-            参加確認は長くしない。まずは候補日、競技参加、打ち上げ参加、NG種目だけ取れれば
-            会場と当日の流れを詰められます。
-          </p>
-        </div>
-        <div class="rsvp-grid" id="rsvpGrid"></div>
-        <div class="message-card" id="messageTemplate"></div>
-      </section>
-
-      <section class="section references-section" id="references">
-        <div class="section-intro wide">
-          <p class="eyebrow">参考ネタ</p>
-          <h2>使えそうな外部ネタを貯める場所</h2>
-          <p>
-            参考リンクは、ただ貼るだけではなく「Moguriで使うなら何に変換するか」まで一緒に残します。
-            今後も誰かがネタを見つけたら、この型で足していきます。
-          </p>
-        </div>
-        <div class="source-grid" id="sourceGrid"></div>
-        <div class="idea-template" id="ideaTemplate"></div>
-      </section>
-
-      <section class="section notes-section" id="notes">
-        <div class="section-intro wide">
-          <p class="eyebrow">背景メモ</p>
-          <h2>企画メモ</h2>
-          <p>
-            細かい話はまだ仮です。ここでは、メンバーに共有してよい粒度の方向性だけを残します。
-          </p>
-        </div>
-        <div class="memo-grid" id="memoGrid"></div>
-        <div class="reference-row">
-          <a href="https://www.dropbox.com/scl/fi/dpdjhbh9eltkmtqnawxtc/2.m4a?rlkey=75pgvtqsuphonbvx8uaoyhhk2&st=7s2hl6vb&dl=0">参考音源</a>
-          <span>細かい背景メモは公開していません。</span>
+        <div class="workflow" aria-label="公開までの流れ">
+          <div><strong>入力</strong><span>イベント行を追加</span></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div><strong>公開区分</strong><span>公開 / メンバー限定 / 非公開</span></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div><strong>サイト</strong><span>公開の行だけ自動表示</span></div>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>Moguri 100回記念会 企画共有ページ</span>
-      <a href="https://quietbriony.github.io/Moguri/">公開 URL</a>
+      <div>
+        <strong>Moguri イベント企画ハブ</strong>
+        <span>現在の公開基盤：GitHub Pages</span>
+      </div>
+      <a href="#top">ページ上部へ ↑</a>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>

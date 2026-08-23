@@ -1,26 +1,39 @@
 # Moguri
 
-Moguri is a working notebook and static member site for shaping an idea from:
+Moguriのイベント企画を、Google Driveで共同編集しながら公開する静的サイトです。
 
-- Nishihara Town Gymnasium public facility information
-- A recorded conversation/audio memo
-- Follow-up planning notes for the member group
+- 公開サイト: <https://quietbriony.github.io/Moguri/>
+- 共同編集フォルダ: <https://drive.google.com/drive/folders/1T8rbeEmxREmp3vdy4n1kveQzF0Rn4Ny1>
+- イベント入力: <https://docs.google.com/spreadsheets/d/16M7nRooOCL64B25zJI8CXBeX6TEbcLz82OIvaIkGTFs/edit>
+- 企画・ページ反映マスター: <https://docs.google.com/spreadsheets/d/16fvqZbgGHQTyeABn92KsMDDK8ewJSQHjElSjk7tiBNo/edit>
 
-The public site is designed for GitHub Pages. Raw audio is kept local and ignored by Git.
+現在の公開基盤はGitHub Pagesです。Cloudflare Pagesへ接続する場合も、同じ安全な`dist/`を配信します。
 
-Live site: <https://quietbriony.github.io/Moguri/>
+## 情報の流れ
 
-GitHub repo: <https://github.com/QuietBriony/Moguri>
+1. メンバーが「イベント入力」に追記する
+2. `公開区分`を`公開`にしたイベントだけ、公開ページの一覧へ反映される
+3. 詳細文や決定事項は「企画・ページ反映マスター」で確認してから手動反映する
+4. AI作業用・会話メモ・解析データは公開ビルドへ含めない
 
-## Local Workflow
+## ローカル確認
 
 ```powershell
-python scripts/analyze_audio.py source/audio/2.m4a
-python -m http.server 8080
+npm run check
+npm run build
+python -m http.server 8080 --directory dist
 ```
 
-Then open `http://localhost:8080`.
+`http://localhost:8080`を開きます。
 
-## Publish Workflow
+## 公開設定
 
-Publishing was completed to a public GitHub Pages site on 2026-06-06. Future pushes to `main` run `.github/workflows/pages.yml`.
+GitHub Pagesは`.github/workflows/pages.yml`で`dist/`だけを公開します。
+
+Cloudflare Pagesでは次を設定します。
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Root directory: `/`
+
+pushと公開操作は、このワークスペースでは人の確認後に実施します。

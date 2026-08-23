@@ -2,47 +2,31 @@
 
 Publishing is human-gated for this workspace.
 
-Current live site: <https://quietbriony.github.io/Moguri/>
+- Current live site: <https://quietbriony.github.io/Moguri/>
+- Current host: GitHub Pages
+- Cloudflare Pages: not connected as of 2026-08-23
+- GitHub repo: <https://github.com/QuietBriony/Moguri>
 
-Current GitHub repo: <https://github.com/QuietBriony/Moguri>
+## Before publishing
 
-Before running any command that creates a remote repository, pushes commits, or enables Pages, confirm:
+- Confirm the event rows marked `公開` contain only public-safe text.
+- Confirm no internal memo, transcript, audio, or generated analysis appears in `dist/`.
+- Run `npm run check` and `npm run build`.
+- Review the desktop and mobile page locally.
+- Confirm whether the target is GitHub Pages, Cloudflare Pages, or both.
 
-- GitHub owner or organization
-- Repository visibility: public or private
-- Whether the Dropbox audio link is acceptable on the public/member site
-- Whether machine transcript excerpts can ever be published
+The build script uses an allow-list and writes only `index.html`, `styles.css`, `app.js`, `favicon.svg`, and `_headers` to `dist/`.
 
-## Prepared Commands
+## GitHub Pages
 
-Check authentication:
+The workflow in `.github/workflows/pages.yml` builds and uploads `dist/` whenever an approved change reaches `main`.
 
-```powershell
-gh auth status
-```
+## Cloudflare Pages
 
-The repo has already been created. Original creation command:
+Repository settings:
 
-```powershell
-gh repo create QuietBriony/Moguri --public --source . --remote origin --push
-```
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Root directory: `/`
 
-For a future private repo, replace `--public` with `--private`.
-
-Enable GitHub Pages with GitHub Actions as the build source:
-
-```powershell
-gh api --method POST /repos/QuietBriony/Moguri/pages -f build_type=workflow
-```
-
-Trigger or inspect the Pages deployment:
-
-```powershell
-gh workflow run pages.yml --ref main
-gh run list --workflow pages.yml --limit 3
-gh api /repos/QuietBriony/Moguri/pages --jq .html_url
-```
-
-## Expected Pages Behavior
-
-The workflow in `.github/workflows/pages.yml` uploads the repo root as the static artifact and deploys it to GitHub Pages whenever `main` receives a push.
+`wrangler.toml` contains the matching local Pages output configuration. Connecting the repository and choosing the production branch are Cloudflare account operations and require explicit approval.

@@ -1,0 +1,9 @@
+{
+  "name": "moguri-event-hub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check": "node --check app.js && node --check scripts/build-site.mjs"
+  }
+}
