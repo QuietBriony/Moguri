@@ -3,9 +3,7 @@
 Moguriのイベント企画を、Google Driveで共同編集しながら公開する静的サイトです。
 
 - 公開サイト: <https://quietbriony.github.io/Moguri/>
-- 共同編集フォルダ: <https://drive.google.com/drive/folders/1T8rbeEmxREmp3vdy4n1kveQzF0Rn4Ny1>
-- イベント入力: <https://docs.google.com/spreadsheets/d/16M7nRooOCL64B25zJI8CXBeX6TEbcLz82OIvaIkGTFs/edit>
-- 企画・ページ反映マスター: <https://docs.google.com/spreadsheets/d/16fvqZbgGHQTyeABn92KsMDDK8ewJSQHjElSjk7tiBNo/edit>
+- 共同編集の場所（Google Drive のフォルダ・入力シート・マスター）: メンバーに個別に共有しています。公開の README には載せません。
 
 現在の公開基盤はGitHub Pagesです。Cloudflare Pagesへ接続する場合も、同じ安全な`dist/`を配信します。
 
